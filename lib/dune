@@ -1,0 +1,2 @@
+(library
+ (name xtrm_pomodoro))

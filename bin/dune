@@ -1,0 +1,4 @@
+(executable
+ (public_name xtrm_pomodoro)
+ (name main)
+ (libraries xtrm_pomodoro bogue))
