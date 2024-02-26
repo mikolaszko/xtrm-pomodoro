@@ -1,4 +1,5 @@
 (executable
  (public_name xtrm_pomodoro)
  (name main)
+ (modules intLayout main)
  (libraries xtrm_pomodoro bogue))

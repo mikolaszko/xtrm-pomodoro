@@ -2,24 +2,21 @@
 
 open Bogue
 module W = Widget
-module L = Layout
 module T = Trigger
+module Av = Avar
 
 let main () = 
-  let input = W.text_input ~max_size:200 ~prompt:"Enter Your Name" () in
-  let label = W.label ~size:40 "Hello!" in
-  let layout = L.flat[ 
-    L.resident ~w:400 input;
-    L.resident ~w:400 ~h:200 label
-  ] ~background: L.theme_bg in
-  let action ti l _ =
-    let text = W.get_text ti in
-    W.set_text l ("Hello " ^ text ^ "!") in
-  let c = W.connect input label action Trigger.[text_input; key_down] in 
+  let label_main = W.label ~size:10 "Timer!" in
 
-  let board = Bogue.of_layouts ~connections:[c] [layout] in
+  let label_settings = W.label ~size:10 "Settings!" in
+  let timer_page =  .create_timer_page label_main in
+  let settings_page =  IntLayout.create_settings_page label_settings in
+
+  let nav_tabs = Tabs.create ~expand:true ["Timer", timer_page; "Settings", settings_page] in
+
+  let board = Bogue.of_layouts [nav_tabs] in
   Bogue.run board
 
 
-let () = main();
+let () = main() ; 
   Draw.quit()

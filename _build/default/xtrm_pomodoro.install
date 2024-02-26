@@ -1,8 +1,0 @@
-lib: [
-  "_build/install/default/lib/xtrm_pomodoro/META"
-  "_build/install/default/lib/xtrm_pomodoro/dune-package"
-  "_build/install/default/lib/xtrm_pomodoro/opam"
-]
-bin: [
-  "_build/install/default/bin/xtrm_pomodoro"
-]
