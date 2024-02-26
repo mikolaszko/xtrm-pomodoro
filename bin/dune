@@ -1,5 +1,5 @@
 (executable
  (public_name xtrm_pomodoro)
  (name main)
- (modules intLayout main)
+ (modules intLayout intTimer main )
  (libraries xtrm_pomodoro bogue))
