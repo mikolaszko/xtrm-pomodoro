@@ -6,6 +6,4 @@ type t =  {
     interval: int * int * int;
 }
 
-val run_timer : string -> Bogue.Widget.t
-
-val create_timer : Bogue.Widget.t
+val run_timer : int -> Bogue.Widget.t
